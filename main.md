@@ -43,12 +43,17 @@ Outside of that shell (in normal command line)
 docker commit d625476cce65 fast-plast:v1.0
 ```
 
+Can only be executed in Fast-plast folder:
+```bash
 perl fast-plast.pl -1 /home/Chloroplast-176_S23_L001_R1_001.fastq.gz -2 /home/Chloroplast-176_S23_L001_R2_001.fastq.gz --name sample_176_s23 --bowtie_index All --coverage_analysis --clean light
+```
 
 Gives no trimmed reads so i will do fastqc manually to see if anything is wrong; i do it outside of container in chloroplasts folder
 ```bash
 conda activate fastqc
 mkdir fastqc
 fastqc *fastq.gz -o fastqc_output/
-multiqc fastqc_output/
+# multiqc fastqc_output/
 ```
+
+Strange. the quality is satisfactory and the command seems correct but it says there are no trimmed reads in the error log
