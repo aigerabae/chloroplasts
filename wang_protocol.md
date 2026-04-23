@@ -105,3 +105,4 @@ karect \
     -matchtype='hamming'
 ```
 
+Next step - assembly with unicycler (from hybrid section)
