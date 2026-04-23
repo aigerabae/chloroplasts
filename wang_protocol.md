@@ -161,3 +161,5 @@ ls
 ```
 
 Next step - assembly with unicycler (from hybrid section)
+
+In the end will annotate with Prokka
