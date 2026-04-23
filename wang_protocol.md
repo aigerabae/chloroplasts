@@ -25,11 +25,12 @@ conda install bioconda::bbmap
 
 Script for bbduk trimming:
 ```bash
+mkdir /home/wang_protocol/trimmed
 export PATH="/home/wang_protocol/":$PATH
 inputf='/home/'
-outputtrimreads='home/wang_protocol/trimmed'
+outputtrimreads='/home/wang_protocol/trimmed/'
 minlen=50
-adaptors='/home/raymond/devel/bbmap/bbmap/resources/adapters.fa'
+adaptors='/root/miniconda3/envs/wang/share/bbmap/resources/adapters.fa'
 trimq=30
 threads=40
 for in1 in $(find $inputf -name "*R1_001.fastq.gz"); do
@@ -45,8 +46,7 @@ for in1 in $(find $inputf -name "*R1_001.fastq.gz"); do
     out2=$outputtrimreads/$f2
     sampleid=$outputtrimreads${f1%%R1.trim.fastq.gz}
 
-    bbduk.sh in1=$in1 in2=$in2 out1=$out1 out2=$out2 minlen=$minlen k=25 mink=8 ktrim=r ref=adapters.fa hdist=1 overwrite=f qtrim=rl trimq=$trimq t=$threads bhist=$sampleid"bhist.txt" qhist=$sampleid"qhist.txt" gchist=$sampleid"gchist.txt" aqhist=$sampleid"aqhist.txt" lhist=$sampleid"lhist.txt" > $sampleid"bbduk_log.txt"
+    bbduk.sh in1=$in1 in2=$in2 out1=$out1 out2=$out2 minlen=$minlen k=25 mink=8 ktrim=r ref=$adaptors hdist=1 overwrite=f qtrim=rl trimq=$trimq t=$threads bhist=$sampleid"bhist.txt" qhist=$sampleid"qhist.txt" gchist=$sampleid"gchist.txt" aqhist=$sampleid"aqhist.txt" lhist=$sampleid"lhist.txt" > $sampleid"bbduk_log.txt"
 
 done
-
-# in case it doesn't see adapyters they are here: /root/miniconda3/envs/wang/share/bbmap/resources/adapters.fa
+```
