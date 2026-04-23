@@ -50,3 +50,58 @@ for in1 in $(find $inputf -name "*R1_001.fastq.gz"); do
 
 done
 ```
+
+fastqc again:
+```bash
+conda install bioconda::fastqc
+mkdir /home/wang_protocol/trimmed/fastqc_result
+fastqc /home/wang_protocol/trimmed/*fastq.gz -o /home/wang_protocol/trimmed/fastqc_result
+```
+
+I will use chlorplast genome from https://www.ncbi.nlm.nih.gov/datasets/organelle/?taxon=3750 as reference genome
+I saved it into wang_protocol/ref
+```bash
+sed -n '/^>NC_061549.1/,/^>/p' wang_protocol/ref/genome.fna | head -n -1 > wang_protocol/ref/single_ref.fna
+# because it has both ">NC_061549.1 Malus domestica cultivar Red Delicious-ww chloroplast" and ">OK458681.1 Malus domestica cultivar Red Delicious-ww chloroplast"
+
+Doubling up genome
+# 1. Get the header
+grep ">" wang_protocol/ref/single_ref.fna > wang_protocol/ref/doubled_genome.fna
+
+# 2. Get the sequence, remove line breaks, repeat it, and save it
+grep -v ">" wang_protocol/ref/single_ref.fna | tr -d '\n' > wang_protocol/ref/sequence_only.txt
+cat wang_protocol/ref/sequence_only.txt wang_protocol/ref/sequence_only.txt >> wang_protocol/ref/doubled_genome.fna
+
+Assembly:
+conda install bioconda::karect
+
+I manually copied trimmed reads and saved them into inoutkarect folder. i also renamd them to remove R1_001.fastq.gz in the name and gunzipped them
+```bash
+gunzip input_karect/*fastq.gz 
+```
+
+Made result_assembly folder  
+```bash
+mkdir -p wang_protocol/result_assembly/
+mkdir -p temp
+```
+
+Trying for one sample
+```bash
+threads=40
+outputDir='wang_protocol/result_assembly/'
+temp='temp'
+
+mkdir $temp
+
+karect \
+    -correct \
+     -inputfile='input_karect/Chloroplast-176_S23_L001_R1.trim.fastq' \
+     -inputfile='input_karect/Chloroplast-176_S23_L001_R2.trim.fastq' \
+     -resultdir=$outputDir \
+    -tempdir=$temp \
+    -threads=$threads \
+    -celltype='haploid' \
+    -matchtype='hamming'
+```
+
