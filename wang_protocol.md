@@ -105,4 +105,59 @@ karect \
     -matchtype='hamming'
 ```
 
+Others:
+```bash
+karect \
+    -correct \
+     -inputfile='input_karect/Chloroplast-179_S31_L001_R1.trim.fastq' \
+     -inputfile='input_karect/Chloroplast-179_S31_L001_R2.trim.fastq' \
+     -resultdir=$outputDir \
+    -tempdir=$temp \
+    -threads=$threads \
+    -celltype='haploid' \
+    -matchtype='hamming'
+
+karect \
+    -correct \
+     -inputfile='input_karect/Chloroplast-180_S33_L001_R1.trim.fastq' \
+     -inputfile='input_karect/Chloroplast-180_S33_L001_R2.trim.fastq' \
+     -resultdir=$outputDir \
+    -tempdir=$temp \
+    -threads=$threads \
+    -celltype='haploid' \
+    -matchtype='hamming'
+
+karect \
+    -correct \
+     -inputfile='input_karect/Chloroplast-KAB-1_S32_L001_R1.trim.fastq' \
+     -inputfile='input_karect/Chloroplast-KAB-1_S32_L001_R2.trim.fastq' \
+     -resultdir=$outputDir \
+    -tempdir=$temp \
+    -threads=$threads \
+    -celltype='haploid' \
+    -matchtype='hamming'
+
+karect \
+    -correct \
+     -inputfile='input_karect/Chloroplast-KAB-5_S3_L001_R1.trim.fastq' \
+     -inputfile='input_karect/Chloroplast-KAB-5_S3_L001_R1.trim.fastq' \
+     -resultdir=$outputDir \
+    -tempdir=$temp \
+    -threads=$threads \
+    -celltype='haploid' \
+    -matchtype='hamming'
+
+karect \
+    -correct \
+     -inputfile='input_karect/Chloroplast-KAB-6_S31_L001_R1.trim.fastq' \
+     -inputfile='input_karect/Chloroplast-KAB-6_S31_L001_R1.trim.fastq' \
+     -resultdir=$outputDir \
+    -tempdir=$temp \
+    -threads=$threads \
+    -celltype='haploid' \
+    -matchtype='hamming'
+
+ls 
+```
+
 Next step - assembly with unicycler (from hybrid section)
