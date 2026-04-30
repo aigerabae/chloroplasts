@@ -151,15 +151,33 @@ karect \
     -correct \
      -inputfile='input_karect/Chloroplast-KAB-6_S31_L001_R1.trim.fastq' \
      -inputfile='input_karect/Chloroplast-KAB-6_S31_L001_R1.trim.fastq' \
-     -resultdir=$outputDir \
+     -resultdir=$outputDir \cod
     -tempdir=$temp \
     -threads=$threads \
     -celltype='haploid' \
     -matchtype='hamming'
-
-ls 
 ```
 
-Next step - assembly with unicycler (from hybrid section)
+
+Next step - assembly with unicycler; will use without karect for now because this version is the only one i was able to install (its new) and it doesn't allow not using correction and double correction is probably bad
+```bash
+conda deactivate
+conda create -n unicycler python=3.11
+conda activate unicycler
+conda install bioconda::unicycler
+
+start=$(date +%s)
+
+unicycler \
+    -1 input_karect/Chloroplast-176_S23_L001_R1.trim.fastq \
+    -2 input_karect/Chloroplast-176_S23_L001_R2.trim.fastq \
+    -o output_unicycler/ \
+    -t 20
+
+end=$(date +%s)
+DIFF=$(( $end - $start ))
+echo $outputDir/$id "Excution time: " $DIFF " seconds." >> runTime.log
+```
+
 
 In the end will annotate with Prokka
