@@ -159,7 +159,7 @@ karect \
 ```
 
 
-Next step - assembly with unicycler; will use without karect for now because this version is the only one i was able to install (its new) and it doesn't allow not using correction and double correction is probably bad
+Next step - assembly with unicycler; will use without karect for now because this version is the only one i was able to install (its new) and it doesn't allow not using correction and double correction is probably bad; also, one of the samples consistently doesn't get through karect so maybe its fo the best
 ```bash
 conda deactivate
 conda create -n unicycler python=3.11
