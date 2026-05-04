@@ -179,6 +179,24 @@ DIFF=$(( $end - $start ))
 echo $outputDir/$id "Excution time: " $DIFF " seconds." >> runTime.log
 ```
 
+### 3\_post\_assembly
+### mummer
+as described above in long-read only assembly part.
+
+Run direction.py
+```
+./3_post_assembly/1_same_structure/direction.py 
+```
+Run mummer\_plot.sh
+```
+./3_post_assembly/1_same_structure/mummer_direction.sh 
+```
+### polish
+we used Pilon to polish the assembly, run until result unchanged.
+```
+./3_post_assembly/2_polish/run_pilon.sh
+
+
 
 In the end will annotate with Prokka
 
