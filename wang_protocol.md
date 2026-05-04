@@ -158,20 +158,20 @@ karect \
     -matchtype='hamming'
 ```
 
-
-Next step - assembly with unicycler; will use without karect for now because this version is the only one i was able to install (its new) and it doesn't allow not using correction and double correction is probably bad; also, one of the samples consistently doesn't get through karect so maybe its fo the best
+Assembly with unicycler
+I will try doing it with older version of unicycler to follow their protocol exactly (with karect): (the new version is 0.5.1 but it doesn't support no-correct flag)
 ```bash
 conda deactivate
-conda create -n unicycler python=3.11
-conda activate unicycler
-conda install bioconda::unicycler
+conda create -n unicycler_2 -c bioconda unicycler==0.4.8
+conda activate unicycler_2 
 
 start=$(date +%s)
 
 unicycler \
-    -1 input_karect/Chloroplast-176_S23_L001_R1.trim.fastq \
-    -2 input_karect/Chloroplast-176_S23_L001_R2.trim.fastq \
+    -1 output_karect/karect_Chloroplast-176_S23_L001_R1.trim.fastq \
+    -2 output_karect/karect_Chloroplast-176_S23_L001_R2.trim.fastq \
     -o output_unicycler/ \
+    --no_correct \
     -t 20
 
 end=$(date +%s)
@@ -181,3 +181,5 @@ echo $outputDir/$id "Excution time: " $DIFF " seconds." >> runTime.log
 
 
 In the end will annotate with Prokka
+
+
