@@ -179,25 +179,19 @@ DIFF=$(( $end - $start ))
 echo $outputDir/$id "Excution time: " $DIFF " seconds." >> runTime.log
 ```
 
-### 3\_post\_assembly
-### mummer
-as described above in long-read only assembly part.
-
-Run direction.py
+Let's align it to reference and see what's up here:
+```bash
+conda create --name blast
+conda activate blast
+conda install bioconda::blast
+blastn -query assembly.fasta -subject ~/biostar/NCB/chloroplasts/wang_protocol/ref/doubled_genome.fna -outfmt 6 > check_results.txt
 ```
-./3_post_assembly/1_same_structure/direction.py 
-```
-Run mummer\_plot.sh
-```
-./3_post_assembly/1_same_structure/mummer_direction.sh 
-```
-### polish
-we used Pilon to polish the assembly, run until result unchanged.
-```
-./3_post_assembly/2_polish/run_pilon.sh
 
 
+The coverage is very low and only some fragments map to chloroplast genome o apple tree well
+I will redo it but extract only chloroplast DNA first
 
 In the end will annotate with Prokka
 
-
+Starting Unicycler (2026-05-04 12:19:42)
+Assembly complete (2026-05-04 13:26:18)
