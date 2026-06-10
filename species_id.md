@@ -60,4 +60,4 @@ BLAST results:
 3 - 180_S33_L001_R1_001: Echinops exaltatus chloroplast, complete genome  
 4 - KAB-1_S32_L001_R1_001:	Tulipa alberti chloroplast, complete genome  
 5 - KAB-5_S3_L001_R1_001: Tulipa butkovii plastid, complete genome  
-6 - KAB-6_S31: Tulipa greigii chloroplast, complete genome
+6 - KAB-6_S31: Tulipa greigii chloroplast, complete genome (didn't assemble well; has only 3548 nucleotides but matches with 150k sequences)
