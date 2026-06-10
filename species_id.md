@@ -19,7 +19,7 @@ This results in 2787 entries and the mostcommon entry is Dasiphora fruticosa wit
 cat species_blast1.txt | grep ">" | grep "Dasiphora fruticosa" | wc -l
 Overall Dasiphora fruticosa is matched 854 times out of 19896 matches made
 
-I get recommended to use GetOrganelle for assembly. They recommend using adapter-trimmed raw reads without quality control for input. Based on my fastqc output there should be no adapters already
+I get recommended to use GetOrganelle for assembly. They recommend using adapter-trimmed raw reads without quality control for input. Based on my fastqc output there should be no adapters already. I will do in folder /mnt/harddisk/biostar/NCB/chloroplasts/getOrganelle
 ```bash
 conda activate chloroplasts
 conda install -c bioconda getorganelle
@@ -70,3 +70,16 @@ Tillich M, Lehwark P, Pellizzer T, Ulbricht-Jones ES, Fischer A, Bock R and Grei
 63081 = KAB-1_S32 (2)
 2775+ = KAB-5_S3 (4)
 KAB-6_S31 = no single circular plastid
+
+I will reduce word size for sample 6:
+get_organelle_from_reads.py \
+    -1 ../Chloroplast-KAB-6_S31_L001_R1_001.fastq.gz \
+    -2 ../Chloroplast-KAB-6_S31_L001_R2_001.fastq.gz \
+    -o KAB-6_S31_plastome_w105 \
+    -R 15 -k 21,45,65,85,105 \
+    -F embplant_pt -t 20 \
+    -w 105        # down from auto-estimated 178
+
+133968 = KAB-6_S31 (6)
+
+I saved all 6 assemblies in getOrganelle/fasta_assemblies and all 6 .gk annotations in getOrganelle/annotations_geseq
