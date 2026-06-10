@@ -55,9 +55,9 @@ Nevermind. Prokka is not well suited for chloroplast annotation
 
 BLAST results:
 
-1 - 176_S23_L001_R1_001: Alchemilla exigua chloroplast (2nd result by p-value but has higher percent identity and identical length ~150k)
-2 - 179_S31_L001_R1_001: Alfredia cernua chloroplast, complete genome
-3 - 180_S33_L001_R1_001: Echinops exaltatus chloroplast, complete genome
-4 - KAB-1_S32_L001_R1_001:	Tulipa alberti chloroplast, complete genome
-5 - KAB-5_S3_L001_R1_001: Tulipa butkovii plastid, complete genome
+1 - 176_S23_L001_R1_001: Alchemilla exigua chloroplast (2nd result by p-value but has higher percent identity and identical length ~150k)  
+2 - 179_S31_L001_R1_001: Alfredia cernua chloroplast, complete genome  
+3 - 180_S33_L001_R1_001: Echinops exaltatus chloroplast, complete genome  
+4 - KAB-1_S32_L001_R1_001:	Tulipa alberti chloroplast, complete genome  
+5 - KAB-5_S3_L001_R1_001: Tulipa butkovii plastid, complete genome  
 6 - KAB-6_S31: 
