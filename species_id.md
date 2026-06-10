@@ -55,3 +55,12 @@ ls
 ```
 
 I will have them running one after another; 1 sample took 395.24 s, so total should be done in 2000 seconds = 33 mins
+
+I will be annotating the first sample with Prokka in the meantime:
+```bash
+conda create -n prokka bioconda::prokka
+conda activate prokka
+prokka --version
+```
+
+Nevermind. Prokka is not well suited for chloroplast annotation
