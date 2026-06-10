@@ -60,18 +60,19 @@ BLAST results:
 3 - 180_S33: Echinops exaltatus chloroplast, complete genome  
 4 - KAB-1_S32:	Tulipa alberti chloroplast, complete genome  
 5 - KAB-5_S3: Tulipa butkovii plastid, complete genome  
-6 - KAB-6_S31: Tulipa greigii chloroplast, complete genome (didn't assemble well; has 5 scaffolds and 4/5 match with Tulipa greigii)
-
+6 - KAB-6_S31: Tulipa greigii chloroplast, complete genome (didn't assemble well; has 5 scaffolds and 4/5 match with Tulipa greigii)  
+ 
 Annotation with GeSeq:
-Tillich M, Lehwark P, Pellizzer T, Ulbricht-Jones ES, Fischer A, Bock R and Greiner S (2017) GeSeq – versatile and accurate annotation of organelle genomes. Nucleic Acids Research 45: W6-W11
-8223 = 176_S23 (5)
-121749 = 179_S31 (3)
-3763 = 180_S33 (1)
-63081 = KAB-1_S32 (2)
-2775+ = KAB-5_S3 (4)
-KAB-6_S31 = no single circular plastid
+Tillich M, Lehwark P, Pellizzer T, Ulbricht-Jones ES, Fischer A, Bock R and Greiner S (2017) GeSeq – versatile and accurate annotation of organelle genomes. Nucleic Acids Research 45: W6-W11  
+8223 = 176_S23 (5)  
+121749 = 179_S31 (3)  
+3763 = 180_S33 (1)    
+63081 = KAB-1_S32 (2)  
+2775+ = KAB-5_S3 (4)  
+KAB-6_S31 = no single circular plastid  
 
 I will reduce word size for sample 6:
+```bash
 get_organelle_from_reads.py \
     -1 ../Chloroplast-KAB-6_S31_L001_R1_001.fastq.gz \
     -2 ../Chloroplast-KAB-6_S31_L001_R2_001.fastq.gz \
@@ -79,7 +80,8 @@ get_organelle_from_reads.py \
     -R 15 -k 21,45,65,85,105 \
     -F embplant_pt -t 20 \
     -w 105        # down from auto-estimated 178
+```
 
-133968 = KAB-6_S31 (6)
+133968 = KAB-6_S31 (6)  
 
-I saved all 6 assemblies in getOrganelle/fasta_assemblies and all 6 .gk annotations in getOrganelle/annotations_geseq
+I saved all 6 assemblies in getOrganelle/fasta_assemblies and all 6 .gk annotations in getOrganelle/annotations_geseq  
