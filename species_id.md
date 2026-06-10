@@ -28,29 +28,17 @@ get_organelle_from_reads.py -1 ../Chloroplast-176_S23_L001_R1_001.fastq.gz -2 ..
 # i first used it without multithreading so i had to also add --continue for the second run
 ```
 
-BLAST showed ~100% matches (the first 10):
-                                                                  Scientific      Common                     Max       Total     Query   E   Per.   Acc.                        
-Alchemilla exigua chloroplast, complete genome	Alchemilla exigua	NA	478305	129100	376000	100%	0	100	151947	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/PP316508.1?report=genbank&log$=nucltop&blast_rank=1&RID=2JFB0W95016","PP316508.1")
-Alchemilla acutiloba plastid	Alchemilla acutiloba	NA	1572672	155400	281000	100%	0	99.97	126286	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/KY420009.1?report=genbank&log$=nucltop&blast_rank=2&RID=2JFB0W95016","KY420009.1")
-Alchemilla monticola chloroplast, complete genome	Alchemilla monticola	NA	1532256	104800	372700	100%	0	99.68	151881	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/PP316510.1?report=genbank&log$=nucltop&blast_rank=3&RID=2JFB0W95016","PP316510.1")
-Alchemilla faeroensis genome assembly, chromosome: 8	Alchemilla faeroensis	NA	478306	92464	433800	85%	0	99.6	35937374	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/OZ360586.1?report=genbank&log$=nucltop&blast_rank=4&RID=2JFB0W95016","OZ360586.1")
-Alchemilla faeroensis genome assembly, chromosome: 32	Alchemilla faeroensis	NA	478306	92459	402400	85%	0	99.6	30672008	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/OZ360610.1?report=genbank&log$=nucltop&blast_rank=5&RID=2JFB0W95016","OZ360610.1")
-Alchemilla faeroensis genome assembly, organelle: plastid:chloroplast	Alchemilla faeroensis	NA	478306	104600	371600	100%	0	99.59	152288	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/OZ360792.1?report=genbank&log$=nucltop&blast_rank=6&RID=2JFB0W95016","OZ360792.1")
-Alchemilla transiens chloroplast, complete genome	Alchemilla transiens	NA	478348	104500	370400	100%	0	99.57	152275	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/PP316511.1?report=genbank&log$=nucltop&blast_rank=7&RID=2JFB0W95016","PP316511.1")
-Alchemilla faeroensis genome assembly, chromosome: 9	Alchemilla faeroensis	NA	478306	33179	109600	35%	0	99.54	35832031	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/OZ360587.1?report=genbank&log$=nucltop&blast_rank=8&RID=2JFB0W95016","OZ360587.1")
-Alchemilla microcarpa voucher Brent W. Steury 080520.1 chloroplast, complete genome	Alchemilla microcarpa	NA	1053328	38703	349500	99%	0	99.44	150586	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/NC_087047.1?report=genbank&log$=nucltop&blast_rank=9&RID=2JFB0W95016","NC_087047.1")
-Alchemilla glaucescens chloroplast, complete genome	Alchemilla glaucescens	NA	667203	91633	372900	100%	0	99.33	151906	=HYPERLINK("https://www.ncbi.nlm.nih.gov/nucleotide/PP316509.1?report=genbank&log$=nucltop&blast_rank=10&RID=2JFB0W95016","PP316509.1")
-<img width="2221" height="171" alt="image" src="https://github.com/user-attachments/assets/56b11a69-6a10-45c1-b63c-d6f42e3d68aa" />
- 
+BLAST showed that 176_S23_L001_R1_001 has ~100% matches with several species Alchemilla exigua chloroplast:
+
 
 My sequence is 152024 nucleotides long
 
 ```bash
 get_organelle_from_reads.py -1 ../Chloroplast-179_S31_L001_R1_001.fastq.gz -2 ../Chloroplast-179_S31_L001_R2_001.fastq.gz -o 179_S31_plastome -R 15 -k 21,45,65,85,105 -F embplant_pt -t 20
 get_organelle_from_reads.py -1 ../Chloroplast-180_S33_L001_R1_001.fastq.gz -2 ../Chloroplast-180_S33_L001_R2_001.fastq.gz -o 180_S33_plastome -R 15 -k 21,45,65,85,105 -F embplant_pt -t 20
-get_organelle_from_reads.py -1 ../Chloroplast-KAB-1_S32_L001_R1_001.fastq.gz -2 ../Chloroplast-KAB-1_S32_L001_R1_001.fastq.gz -o KAB-1_S32_plastome -R 15 -k 21,45,65,85,105 -F embplant_pt -t 20
-get_organelle_from_reads.py -1 ../Chloroplast-KAB-5_S3_L001_R1_001.fastq.gz -2 ../Chloroplast-KAB-5_S3_L001_R1_001.fastq.gz -o KAB-5_S3_plastome -R 15 -k 21,45,65,85,105 -F embplant_pt -t 20
-get_organelle_from_reads.py -1 ../Chloroplast-KAB-6_S31_L001_R1_001.fastq.gz -2 ../Chloroplast-KAB-6_S31_L001_R1_001.fastq.gz -o KAB-6_S31_plastome -R 15 -k 21,45,65,85,105 -F embplant_pt -t 20
+get_organelle_from_reads.py -1 ../Chloroplast-KAB-1_S32_L001_R1_001.fastq.gz -2 ../Chloroplast-KAB-1_S32_L001_R2_001.fastq.gz -o KAB-1_S32_plastome -R 15 -k 21,45,65,85,105 -F embplant_pt -t 20
+get_organelle_from_reads.py -1 ../Chloroplast-KAB-5_S3_L001_R1_001.fastq.gz -2 ../Chloroplast-KAB-5_S3_L001_R2_001.fastq.gz -o KAB-5_S3_plastome -R 15 -k 21,45,65,85,105 -F embplant_pt -t 20
+get_organelle_from_reads.py -1 ../Chloroplast-KAB-6_S31_L001_R1_001.fastq.gz -2 ../Chloroplast-KAB-6_S31_L001_R2_001.fastq.gz -o KAB-6_S31_plastome -R 15 -k 21,45,65,85,105 -F embplant_pt -t 20
 ls
 ```
 
@@ -64,3 +52,12 @@ prokka --version
 ```
 
 Nevermind. Prokka is not well suited for chloroplast annotation
+
+BLAST results:
+
+1 - 176_S23_L001_R1_001: Alchemilla exigua chloroplast (2nd result by p-value but has higher percent identity and identical length ~150k)
+2 - 179_S31_L001_R1_001: Alfredia cernua chloroplast, complete genome
+3 - 180_S33_L001_R1_001: Echinops exaltatus chloroplast, complete genome
+4 - KAB-1_S32_L001_R1_001:	Tulipa alberti chloroplast, complete genome
+5 - KAB-5_S3_L001_R1_001: Tulipa butkovii plastid, complete genome
+6 - KAB-6_S31: 
