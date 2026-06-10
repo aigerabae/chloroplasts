@@ -55,9 +55,18 @@ Nevermind. Prokka is not well suited for chloroplast annotation
 
 BLAST results:
 
-1 - 176_S23_L001_R1_001: Alchemilla exigua chloroplast (2nd result by p-value but has higher percent identity and identical length ~150k)  
-2 - 179_S31_L001_R1_001: Alfredia cernua chloroplast, complete genome  
-3 - 180_S33_L001_R1_001: Echinops exaltatus chloroplast, complete genome  
-4 - KAB-1_S32_L001_R1_001:	Tulipa alberti chloroplast, complete genome  
-5 - KAB-5_S3_L001_R1_001: Tulipa butkovii plastid, complete genome  
+1 - 176_S23: Alchemilla exigua chloroplast (2nd result by p-value but has higher percent identity and identical length ~150k)  
+2 - 179_S31: Alfredia cernua chloroplast, complete genome  
+3 - 180_S33: Echinops exaltatus chloroplast, complete genome  
+4 - KAB-1_S32:	Tulipa alberti chloroplast, complete genome  
+5 - KAB-5_S3: Tulipa butkovii plastid, complete genome  
 6 - KAB-6_S31: Tulipa greigii chloroplast, complete genome (didn't assemble well; has 5 scaffolds and 4/5 match with Tulipa greigii)
+
+Annotation with GeSeq:
+Tillich M, Lehwark P, Pellizzer T, Ulbricht-Jones ES, Fischer A, Bock R and Greiner S (2017) GeSeq – versatile and accurate annotation of organelle genomes. Nucleic Acids Research 45: W6-W11
+8223 = 176_S23 (5)
+121749 = 179_S31 (3)
+3763 = 180_S33 (1)
+63081 = KAB-1_S32 (2)
+2775+ = KAB-5_S3 (4)
+KAB-6_S31 = no single circular plastid
