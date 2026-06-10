@@ -54,4 +54,4 @@ get_organelle_from_reads.py -1 ../Chloroplast-KAB-6_S31_L001_R1_001.fastq.gz -2 
 ls
 ```
 
-I will have them running one after another in the next few hours
+I will have them running one after another; 1 sample took 395.24 s, so total should be done in 2000 seconds = 33 mins
